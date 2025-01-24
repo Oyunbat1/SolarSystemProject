@@ -5,295 +5,53 @@
 }
 
 @keyframes orbit {
-  0% {
-    transform: rotate(0deg);
-    left: 0px;
-    top: 0px;
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  25% {
-    transform: rotate(90deg);
-    left: 0;
-    top: 0px;
-  }
-  50% {
-    transform: rotate(180deg);
-    left: 0;
-    top: 0px;
-  }
-  75% {
-    transform: rotate(270deg);
-    left: 0px;
-    top: 0px;
-  }
-  100% {
-    transform: rotate(360deg);
-    left: 0px;
-    top: 0px;
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .bg-img {
-  position: relative;
-}
-.bg-img img {
+  background-image: url("/convertedimgs/background.webp");
   width: 100vw;
   height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
-.bg-img .container .sun {
+.bg-img .sun-center {
+  width: 75px;
+  height: 75px;
   position: absolute;
-  top: 45%;
-  left: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.bg-img .container .sun img {
-  width: 100px;
-  height: 100px;
-}
-.bg-img .container .first-planet {
-  position: absolute;
-  top: 43%;
-  left: 43.7%;
-  width: 150px;
-  height: 150px;
+.bg-img .orbit {
+  width: var(--orbit-size);
+  height: var(--orbit-size);
   border-radius: 50%;
   border: 1px dashed white;
-  animation: rotate 3s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  animation: orbit var(--orbit-period) infinite linear;
 }
-.bg-img .container .first-planet .img-container {
+.bg-img .center-position {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bg-img .rotate {
   top: 0;
-}
-.bg-img .container .first-planet .img-container img {
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .second-planet {
-  position: absolute;
-  top: 40.55%;
-  left: 42.4%;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 5s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .second-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .second-planet .img-container img {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .thirth-planet {
-  position: absolute;
-  top: 35.75%;
-  left: 39.8%;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 7s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .thirth-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .thirth-planet .img-container img {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .fourth-planet {
-  position: absolute;
-  top: 31.25%;
-  left: 37.2%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 9s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .fourth-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .fourth-planet .img-container img {
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .fifth-planet {
-  position: absolute;
-  top: 24.55%;
-  left: 33.4%;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 11s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .fifth-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .fifth-planet .img-container img {
-  width: 42px;
-  height: 42px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .sixth-planet {
-  position: absolute;
-  top: 20.25%;
-  left: 30.75%;
-  width: 650px;
-  height: 650px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 13s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .sixth-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .sixth-planet .img-container img {
-  width: 60px;
-  height: 44px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .seventh-planet {
-  position: absolute;
-  top: 15.55%;
-  left: 28.4%;
-  width: 750px;
-  height: 750px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 15s infinite linear;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bg-img .container .seventh-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .seventh-planet .img-container img {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
-}
-.bg-img .container .eight-planet {
-  position: absolute;
-  top: 10.55%;
-  left: 25.7%;
-  width: 850px;
-  height: 850px;
-  border-radius: 50%;
-  border: 1px dashed white;
-  animation: rotate 17s infinite linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.bg-img .container .eight-planet .img-container {
-  position: absolute;
-  top: 0;
-}
-.bg-img .container .eight-planet .img-container img {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-  margin: auto;
-  animation: orbit 1s infinite linear;
+  width: var(--planet-size);
+  height: var(--planet-size);
+  animation: orbit var(--rotation-period) infinite linear;
 }
 
 /*# sourceMappingURL=main.css.map */
